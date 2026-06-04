@@ -1,8 +1,3 @@
-# ============================================================
-# model.py
-# NVIDIA CNN Behavioral Cloning Model
-# ============================================================
-
 from tensorflow.keras.models import Sequential
 
 from tensorflow.keras.layers import (
@@ -20,10 +15,6 @@ def build_nvidia_model():
     """
 
     model = Sequential()
-
-    # =====================================================
-    # Convolution Layers
-    # =====================================================
 
     model.add(
         Conv2D(
@@ -69,15 +60,7 @@ def build_nvidia_model():
         )
     )
 
-    # =====================================================
-    # Flatten Layer
-    # =====================================================
-
     model.add(Flatten())
-
-    # =====================================================
-    # Fully Connected Layers
-    # =====================================================
 
     model.add(Dense(100, activation='relu'))
 
@@ -86,10 +69,6 @@ def build_nvidia_model():
     model.add(Dense(50, activation='relu'))
 
     model.add(Dense(10, activation='relu'))
-
-    # =====================================================
-    # Regression Output Layer
-    # =====================================================
 
     model.add(Dense(1))
 
