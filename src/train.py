@@ -1,8 +1,3 @@
-# ============================================================
-# train.py
-# Training pipeline for behavioral cloning model
-# ============================================================
-
 import os
 import cv2
 import numpy as np
