@@ -1,16 +1,6 @@
-# ============================================================
-# augmentation.py
-# Data augmentation functions for behavioral cloning
-# ============================================================
-
 import cv2
 import numpy as np
 import random
-
-
-# ============================================================
-# 1. RANDOM FLIP
-# ============================================================
 
 def random_flip(image, steering_angle):
 
@@ -27,11 +17,6 @@ def random_flip(image, steering_angle):
         steering_angle = -steering_angle
 
     return image, steering_angle
-
-
-# ============================================================
-# 2. RANDOM BRIGHTNESS
-# ============================================================
 
 def random_brightness(image):
 
@@ -50,11 +35,6 @@ def random_brightness(image):
     image = cv2.cvtColor(hsv, cv2.COLOR_HSV2RGB)
 
     return image
-
-
-# ============================================================
-# 3. RANDOM SHADOW
-# ============================================================
 
 def random_shadow(image):
 
@@ -86,11 +66,6 @@ def random_shadow(image):
 
     return image
 
-
-# ============================================================
-# 4. RANDOM TRANSLATION (PAN)
-# ============================================================
-
 def random_translate(image, steering_angle, range_x=100, range_y=10):
 
     """
@@ -120,11 +95,6 @@ def random_translate(image, steering_angle, range_x=100, range_y=10):
 
     return image, steering_angle
 
-
-# ============================================================
-# 5. RANDOM ZOOM
-# ============================================================
-
 def random_zoom(image):
 
     """
@@ -151,11 +121,6 @@ def random_zoom(image):
     image = cv2.resize(cropped, (width, height))
 
     return image
-
-
-# ============================================================
-# 6. FULL AUGMENTATION PIPELINE
-# ============================================================
 
 def augment_image(image, steering_angle):
 
